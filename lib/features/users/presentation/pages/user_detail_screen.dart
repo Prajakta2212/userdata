@@ -1,33 +1,4 @@
-// // presentation/pages/user_detail_screen.dart
-// import 'package:flutter/material.dart';
-// import '../../domain/entities/user.dart';
 
-// class UserDetailScreen extends StatelessWidget {
-//   final User user;
-
-//   UserDetailScreen(this.user);
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(title: Text("User Detail")),
-//       body: Column(
-//         mainAxisAlignment: MainAxisAlignment.center,
-//         children: [
-//           CircleAvatar(
-//             radius: 50,
-//             backgroundImage: NetworkImage(user.avatar),
-//           ),
-//           SizedBox(height: 20),
-//           Text(user.name, style: TextStyle(fontSize: 20)),
-//           Text(user.email),
-//         ],
-//       ),
-//     );
-//   }
-// }
-
-// presentation/pages/user_detail_screen.dart
 import 'package:flutter/material.dart';
 import '../../domain/entities/user.dart';
 
@@ -100,7 +71,7 @@ class UserDetailScreen extends StatelessWidget {
 
             SizedBox(height: 20),
 
-            // 📦 Info Card
+       
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Card(
@@ -112,7 +83,7 @@ class UserDetailScreen extends StatelessWidget {
                   padding: const EdgeInsets.all(16),
                   child: Column(
                     children: [
-                      // Email Row
+            
 
 
                        Row(
@@ -154,7 +125,7 @@ class UserDetailScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      // Name Row
+                     
                      
                     ],
                   ),
@@ -164,7 +135,7 @@ class UserDetailScreen extends StatelessWidget {
 
             SizedBox(height: 20),
 
-            // 🔘 Action Button
+       
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40),
               child: ElevatedButton(

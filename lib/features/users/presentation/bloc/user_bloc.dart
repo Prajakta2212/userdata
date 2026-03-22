@@ -1,4 +1,4 @@
-// presentation/bloc/user_bloc.dart
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../domain/entities/user.dart';
 import '../../domain/repositories/user_repository.dart';
@@ -65,7 +65,6 @@ on<SearchUsers>((event, emit) {
       .where((u) => u.name.toLowerCase().contains(query))
       .toList();
 
-  // 🔥 Remove duplicates using ID
   final uniqueMap = {
     for (var user in filtered) user.id: user
   };
@@ -74,14 +73,5 @@ on<SearchUsers>((event, emit) {
 
   emit(UserLoaded(uniqueUsers, true));
 });
-    // on<SearchUsers>((event, emit) {
-    //   final query = event.query.trim().toLowerCase();
-
-    //   final filtered = allUsers
-    //       .where((u) => u.name.toLowerCase().contains(query))
-    //       .toList();
-
-    //   emit(UserLoaded(filtered, true));
-    // });
   }
 }

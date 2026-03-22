@@ -1,4 +1,4 @@
-// domain/entities/user.dart
+
 class User {
   final int id;
   final String name;
