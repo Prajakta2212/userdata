@@ -19,7 +19,7 @@ class UserDetailScreen extends StatelessWidget {
           children: [
             SizedBox(height: 20),
 
-            // 👤 Avatar with shadow
+      
             Container(
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
@@ -49,7 +49,6 @@ class UserDetailScreen extends StatelessWidget {
 
             SizedBox(height: 16),
 
-            // 🧑 Name
             Text(
               user.name,
               style: TextStyle(
@@ -60,7 +59,6 @@ class UserDetailScreen extends StatelessWidget {
 
             SizedBox(height: 6),
 
-            // 📧 Email
             Text(
               user.email,
               style: TextStyle(

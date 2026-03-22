@@ -33,7 +33,7 @@ final data = response['data'];
     final cached = await cache.get();
 
     if (cached != null) {
-      final List data = jsonDecode(cached); // ✅ FIX
+      final List data = jsonDecode(cached);
 
       return data
           .map<User>((e) => UserModel.fromJson(e))
