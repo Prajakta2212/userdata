@@ -1,5 +1,7 @@
 
+import 'dart:async';
 import 'dart:convert';
+import 'dart:io';
 import 'package:user_app/core/network/api_service.dart';
 import 'package:user_app/core/utils/cache_helper.dart';
 import 'package:user_app/features/users/data/model/user_model.dart';
@@ -27,7 +29,8 @@ final data = response['data'];
     return data
         .map<User>((e) => UserModel.fromJson(e))
         .toList();
-  } catch (e) {
+  }
+  on TimeoutException catch (e)  {
     print("ERROR: $e");
 
     final cached = await cache.get();
@@ -41,7 +44,37 @@ final data = response['data'];
     }
 
     throw Exception("No Internet & No Cache");
-  }
+  }   on SocketException catch (e)  {
+    print("ERROR: $e");
+
+    final cached = await cache.get();
+
+    if (cached != null) {
+      final List data = jsonDecode(cached);
+
+      return data
+          .map<User>((e) => UserModel.fromJson(e))
+          .toList();
+    }
+
+    throw Exception("No Internet & No Cache");
+  } 
+
+ catch (e) {
+    print("ERROR: $e");
+
+    final cached = await cache.get();
+
+    if (cached != null) {
+      final List data = jsonDecode(cached);
+
+      return data
+          .map<User>((e) => UserModel.fromJson(e))
+          .toList();
+    }
+
+    throw Exception("No Internet & No Cache");
+  } 
 }
 
 

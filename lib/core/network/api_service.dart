@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 class ApiService {
   Future<Map<String, dynamic>> getUsers(int page) async {
     final url =
-    "https://reqres.in/api/users?per_page=10;page=$page";
+    "https://reqres.in/api/users?per_page=10&page=$page";
 
 
     print("GET USERS URL: $url");
